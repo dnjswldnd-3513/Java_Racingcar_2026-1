@@ -10,6 +10,7 @@ public class Car {
     private int stack;
 
     public Car(String name) {
+        if (name.isBlank()) throw new IllegalArgumentException();
         this.name = name;
     }
 
@@ -31,4 +32,8 @@ public class Car {
         }
     }
 
+    @Override
+    public String toString() {
+        return name+" : "+ "-".repeat(stack);
+    }
 }
