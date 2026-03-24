@@ -52,6 +52,21 @@ public class Race {
     }
 
     private void raceStart() {
+        System.out.println("실행 결과");
+        for (int i = 0; i < race_Count; i++) {
+            carList.forEach(v -> v.action());
+            carList.forEach(v -> System.out.println(v.toString()));
+            System.out.println();
+        }
+
+        int maxStack = carList.stream().mapToInt(f -> f.getStack()).max().getAsInt();
+
+        String final_victory =  carList.stream()
+                .sorted((e1,e2) -> Integer.compare(e2.getStack(),e1.getStack()))
+                .filter(f -> f.getStack() == maxStack)
+                .map(Car::getName).collect(Collectors.joining(", "));
+
+        System.out.println("최종 우승자 : " + final_victory);
     }
 
 }
