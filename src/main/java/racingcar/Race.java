@@ -20,8 +20,6 @@ public class Race {
         initRace();
     }
 
-    private void initRace() {
-    }
 
     private void initCar() {
         carList = new ArrayList<>();
@@ -43,6 +41,17 @@ public class Race {
             carList.add(car);
         }
     }
+    private void initRace() {
+        System.out.println("시도할 회수는 몇회인가요?\n");
 
+        race_Count = Integer.parseInt(camp.nextstep.edu.missionutils.Console.readLine());
+        if (race_Count <= 0){
+            throw new IllegalArgumentException();
+        }
+        raceStart();
+    }
+
+    private void raceStart() {
+    }
 
 }
