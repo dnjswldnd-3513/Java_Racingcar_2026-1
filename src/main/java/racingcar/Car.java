@@ -24,4 +24,11 @@ public class Car {
     }
 
 
+    public void action(){
+        int ck = Randoms.pickNumberInRange(0,9);
+        if (ck >= 4){
+            stack++;
+        }
+    }
+
 }
