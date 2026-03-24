@@ -13,4 +13,15 @@ public class Car {
         this.name = name;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+
+    public int getStack() {
+        return stack;
+    }
+
+
 }
