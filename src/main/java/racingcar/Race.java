@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Race {
 
     private List<Car> carList;
-    private int race_Count;
+    private int raceCount;
 
     public Race() {
     }
@@ -35,8 +35,8 @@ public class Race {
     private void initRace() {
         System.out.println("시도할 회수는 몇회인가요?");
 
-        race_Count = Integer.parseInt(camp.nextstep.edu.missionutils.Console.readLine());
-        if (race_Count <= 0){
+        raceCount = Integer.parseInt(camp.nextstep.edu.missionutils.Console.readLine());
+        if (raceCount <= 0){
             throw new IllegalArgumentException();
         }
         raceStart();
@@ -45,7 +45,7 @@ public class Race {
     private void raceStart() {
         System.out.println("실행 결과");
 
-        for (int i = 0; i < race_Count; i++) {
+        for (int i = 0; i < raceCount; i++) {
             carList.forEach(v -> {
                 v.action() ;
                 System.out.println(v.toString());
@@ -58,13 +58,13 @@ public class Race {
                 .max()
                 .getAsInt();
 
-        String final_victory =  carList
+        String finalVictory =  carList
                 .stream()
                 .filter(f -> f.getStack() == maxStack)
                 .map(Car::getName)
                 .collect(Collectors.joining(", "));
 
-        System.out.println("최종 우승자 : " + final_victory);
+        System.out.println("최종 우승자 : " + finalVictory);
     }
 
 }
