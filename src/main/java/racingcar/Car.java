@@ -10,9 +10,9 @@ public class Car {
     private int stack;
 
     public Car(String name) {
-        if (name.length() > 5) throw new IllegalArgumentException("길이");
-        if (!name.equals(name.trim())) throw new IllegalArgumentException("이름에 공백이 포함되었습니다.");
         if (name.isBlank()) throw new IllegalArgumentException("빈칸");
+        if (name.length() > 5) throw new IllegalArgumentException("길이");
+        if (name.contains(" ")) throw new IllegalArgumentException("이름에 공백이 포함되었습니다.");
         this.name = name;
     }
 
