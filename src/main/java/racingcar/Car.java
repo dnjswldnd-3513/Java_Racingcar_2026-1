@@ -16,16 +16,13 @@ public class Car {
         this.name = name;
     }
 
-
     public String getName() {
         return name;
     }
 
-
     public int getStack() {
         return stack;
     }
-
 
     public void action(){
         if (Randoms.pickNumberInRange(0,9) >= 4){
